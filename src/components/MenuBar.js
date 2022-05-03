@@ -1,6 +1,8 @@
+
+
 import React from "react";
 
-function MenuBar(props) {
+function MenuBar({handleIsClicked, iconClicked}) {
   /*
 
   The 'span' tags below are the menu items. Think about the way a menu 
@@ -14,23 +16,26 @@ function MenuBar(props) {
 
   return (
     <div className="ui four item menu">
-      <span className="item active">
+      <span className={(iconClicked === 'user large icon') ? 'item active' : 'item' }  onClick={e => handleIsClicked(e.target.childNodes[0].className)}>
         <i className="user large icon" />
       </span>
 
-      <span className="item">
+      <span className={(iconClicked === 'photo large icon') ? 'item active' : 'item' } onClick={e => handleIsClicked(e.target.childNodes[0].className)}>
         <i className="photo large icon" />
       </span>
 
-      <span className="item">
+      <span className={(iconClicked === 'cocktail large icon') ? 'item active' : 'item' } onClick={e => handleIsClicked(e.target.childNodes[0].className)}>
         <i className="cocktail large icon" />
       </span>
 
-      <span className="item">
-        <i className=" themeisle large icon" />
+      <span className={(iconClicked === 'themeisle large icon') ? 'item active' : 'item' } onClick={e => handleIsClicked(e.target.childNodes[0].className)}>
+        <i className="themeisle large icon" />
       </span>
     </div>
   );
 }
 
 export default MenuBar;
+
+
+
